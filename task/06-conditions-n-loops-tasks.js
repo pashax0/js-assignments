@@ -303,16 +303,15 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    // let sum = 0;
-	// if (String(num).length > 1) {
-    //     let arr = String(num).split('');
-    //     sum = +arr.reduce(function(s, item) {
-    //         return +s + +item;
-    //     });
-    //      getDigitalRoot(sum);
-    // }
-	// return num;
-    throw new Error('Not implemented');
+    let sum = 0;
+	while (String(num).length > 1) {
+        let arr = String(num).split('');
+        num = +arr.reduce(function(s, item) {
+            return +s + +item;
+        });
+        
+    }
+	return num;
 }
 
 
@@ -338,7 +337,24 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-
+    // let arr = str.split('');
+	// const arrAss = ['(', ')', '[', ']', '{', '}', '<', '>'];
+	// if (arr.length % 2 != 0) {
+	// 	return false;
+	// }
+	// while (arr.length > 0) {
+	// 	if (arrAss.indexOf(arr[0 + 1]) - arrAss.indexOf(arr[0]) == 1) {
+	// 		arr.splice(0, 2);
+	// 	} else if (arrAss.indexOf(arr[arr.length - 1]) - arrAss.indexOf(arr[0]) == 1) {
+	// 		arr.pop();
+	// 		arr.shift();
+		
+	// 	} else {
+	// 		return false;
+	// 	}
+		
+	// }
+	// return true;
     throw new Error('Not implemented');
 }
 

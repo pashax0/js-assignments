@@ -93,8 +93,12 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    //return a + b < c;
-    throw new Error('Not implemented');
+    return (a < b + c) &&
+    (a > b - c) &&
+    (b < a + c) &&
+    (b > a - c) &&
+    (c < a + b) &&
+    (c > a - b);
 }
 
 
@@ -131,6 +135,8 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
+    //return ( a.y < b.y1 || a.y1 > b.y || a.x1 < b.x || a.x > b.x1 );
+    // return ( rect1.top <= (rect2.top - rect2.height) || (rect1.top - rect1.height) >= rect2.top || (rect1.left - rect1.width) <= rect2.left || rect1.left >= (rect2.left - rect2.width) );
     throw new Error('Not implemented');
 }
 
@@ -162,8 +168,8 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-
-    throw new Error('Not implemented');
+    return (((point.x - circle.center.x) * (point.x - circle.center.x) + (point.y - circle.center.y) * (point.y - circle.center.y)) < circle.radius * circle.radius);
+    //     (((x - Xc) * (x - Xc) + (y - Yc) * (y - Yc)) < r * r);
 }
 
 
@@ -179,13 +185,15 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    // let charF = str.charAt(0);
-    // for (let i = 1; i++; i <= str.length) {
-    //     if (str.charAt(i) === charF) {
-    //         charF = 
-    //     }
-    // }
-    throw new Error('Not implemented');
+    let arr = str.split('');
+	for (let i = 0; i < arr.length; i++) {
+		let char = arr.splice(i, 1);
+		if (!arr.includes(char[0])) {
+			return char[0];
+		}
+		arr.unshift(char[0]);
+	}
+	return null;
 }
 
 

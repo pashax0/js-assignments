@@ -23,10 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   // arr.map(function(item, i) {
-   //    return item == value ? i : -1;
-   // });
-   throw new Error('Not implemented');
+   return arr.indexOf(value);
 }
 
 /**
@@ -41,13 +38,10 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   // let arr = [];
-   // let i = 0;
-   // while (i < len) {
-   //    i++;
-   //    arr.push(i);
-   // };
-   // return arr;
+   // let arr = new Array(len);
+	// return arr.map(function(item, i, arr) {
+	//    return i++;
+	// });
    throw new Error('Not implemented');
 }
 
@@ -65,7 +59,6 @@ function generateOdds(len) {
  */
 function doubleArray(arr) {
    return arr.concat(arr);
-   throw new Error('Not implemented');
 }
 
 
@@ -221,7 +214,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-   throw new Error('Not implemented');
+   return arr.join('\n');
 }
 
 /**
@@ -257,11 +250,10 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-   // let arrF = arr.reduce(function(sum, item, i) {
-	//    return arr[i] = sum + item;
-	// });
-	// return arrF;
-   throw new Error('Not implemented');
+   arr.reduce(function(sum, item, i) {
+      return arr[i] = sum + item;
+   });
+   return arr;
 }
 
 /**
@@ -276,12 +268,14 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-   // return arr.filter(function(item, i) {
-	//    if(i % 2 != 0) {
-	// 	  return item;
-	//    }
-	// });
-   throw new Error('Not implemented');
+   return arr.filter(function(item, i) {
+		if (i % 2 != 0 ) {
+			if (item === null) {
+				return 'xxx';
+			}
+		   return item;
+		}
+	});
 }
 
 
@@ -300,7 +294,9 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   
+   // return arr.reduce(function(el, item, i) {
+   //    return el.concat(item);
+   // },[]);
    throw new Error('Not implemented');
 }
 

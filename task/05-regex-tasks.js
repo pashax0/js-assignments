@@ -31,6 +31,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
+   //return 
    throw new Error('Not implemented');
 }
 
